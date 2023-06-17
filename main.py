@@ -61,7 +61,7 @@ while True:
         classification, precentage = prediction_probability_label(newmodel, img_path, class_labels)
         print(f"{classification} {precentage} %")
 
-        if precentage < 90:
+        if precentage < 50:
             results = {"classification": "Invalid image Please try again.......", "crop": "", "fertilizer": ""}
             db.child("results").set(results)
             db.child("cropdata").update({"imageurl": "None"})
